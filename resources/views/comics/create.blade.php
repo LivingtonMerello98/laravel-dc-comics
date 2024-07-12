@@ -14,7 +14,7 @@
         <input type="text" name="thumb" id="thumb" required><br><br>
 
         <label for="price">Prezzo:</label>
-        <input type="number" name="price" id="price" required><br><br>
+        <input type="text" name="price" id="price" required><br><br>
 
         <label for="series">Serie:</label>
         <input type="text" name="series" id="series" required><br><br>
@@ -36,5 +36,8 @@
 
     <button type="submit">Crea</button>
         <button type="submit">Salva Comic</button>
+
     </form>
+
+    <a href="{{ route('comics.index') }}">Torna all'elenco Comics</a>
 @endsection

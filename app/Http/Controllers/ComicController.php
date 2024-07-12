@@ -37,6 +37,8 @@ class ComicController extends Controller
             'price' => 'required',
             'series' => 'required',
             'sale_date' => 'required',
+            'artist' => 'required',
+            'writers' => 'required',
             'type' => 'required'
         ]);
 
@@ -47,6 +49,8 @@ class ComicController extends Controller
         $comic->price = $request->input('price');
         $comic->series = $request->input('series');
         $comic->sale_date = $request->input('sale_date');
+        $comic->artist = $request->input('artist');
+        $comic->writers = $request->input('writers');
         $comic->type = $request->input('type');
 
         $comic->save(); // Salva i dati nel database
