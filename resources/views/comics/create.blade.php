@@ -6,7 +6,7 @@
         @csrf
         <label for="title">Titolo:</label>
         <input type="text" name="title" id="title" required><br><br>
-        
+
         <label for="description">Descrizione:</label>
         <textarea name="description" id="description" required></textarea><br><br>
 

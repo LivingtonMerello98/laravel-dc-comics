@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
 @section('details')
-
-@section('content')
 <h1>{{ $comic->title }}</h1>
 <p><strong>Descrizione:</strong> {{ $comic->description }}</p>
 <p><strong>Price:</strong> {{ $comic->price }}</p>
@@ -13,6 +11,4 @@
 <p><strong>Scrittore:</strong> {{ $comic->writers }}</p>
 
 <a href="{{ route('comics.index') }}">Torna all'elenco Comics</a>
-@endsection
-
 @endsection

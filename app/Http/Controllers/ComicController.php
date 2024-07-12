@@ -60,6 +60,7 @@ class ComicController extends Controller
      */
     public function show(string $id) //restituisce il modello pasta utilizzando l id
     {
+        $comic = Comic::findOrFail($id); // Trova il comic specifico con l'ID, lancia un 404 se non trovato
         return view('comics.show', compact('comic'));
     }
 

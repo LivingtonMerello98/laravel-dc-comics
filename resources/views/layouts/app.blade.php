@@ -14,6 +14,8 @@
 
     @yield('form')
 
+    @yield('details')
+
     @include('shared.footer')
 </body>
 </html>
