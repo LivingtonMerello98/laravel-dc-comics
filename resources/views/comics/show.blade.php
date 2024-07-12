@@ -2,6 +2,7 @@
 
 @section('details')
 <h1>{{ $comic->title }}</h1>
+<img src="{{ $comic->thumb }}" alt="">
 <p><strong>Descrizione:</strong> {{ $comic->description }}</p>
 <p><strong>Price:</strong> {{ $comic->price }}</p>
 <p><strong>Serie:</strong> {{ $comic->series }}</p>
