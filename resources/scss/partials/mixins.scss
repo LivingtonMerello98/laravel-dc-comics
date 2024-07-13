@@ -1,0 +1,18 @@
+//li header mixin
+
+@mixin list-style {
+    list-style-type: none;
+    margin: 0 1rem;
+    color: $font-grey-color;
+    text-transform: uppercase;
+    font-size: small;
+    font-weight: 700;
+}
+
+@mixin cta-transparent {
+    background-color: #ffffff00;
+    border: 2px solid $border-blue;
+    font-size: medium;
+    text-transform: uppercase;
+
+}

@@ -10,6 +10,8 @@
 <body>
     @include('shared.header')
 
+    @include('shared.hero')
+
     @yield('all_comics')
 
     @yield('form')
@@ -17,5 +19,6 @@
     @yield('details')
 
     @include('shared.footer')
+    @include('shared.bottom-footer')
 </body>
 </html>

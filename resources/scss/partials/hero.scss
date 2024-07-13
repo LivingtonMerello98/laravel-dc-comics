@@ -1,0 +1,16 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+
+.hero {
+    position: relative;
+    height: 50vh;
+    background-image: url('https://static1.srcdn.com/wordpress/wp-content/uploads/2022/03/Avengers-Justice-League-Level-Featured.jpg');
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+.hero .container .cta-fill {
+    position: absolute;
+    bottom: 0;
+}

@@ -1,0 +1,17 @@
+@import 'variables';
+@import 'mixins';
+
+header {
+
+    .logo-container {
+        max-width: 15%;
+
+        .logo-header {
+            width: 100%;
+        }
+    }
+
+    li {
+        @include list-style;
+    }
+}

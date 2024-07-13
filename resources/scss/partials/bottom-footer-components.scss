@@ -1,0 +1,14 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+
+.bottom-footer {
+    background-color: $bg-light-grey;
+
+    .cta-footer {
+        @include cta-transparent;
+    }
+
+    .follow-us {
+        color: $font-blue;
+    }
+}

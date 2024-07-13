@@ -1,6 +1,6 @@
 /*resources/scss/app.scss*/
 @import "~bootstrap/scss/bootstrap";
+@import url("./partials/header-components.scss");
+@import url("./partials/hero.scss");
 
-body {
-    background-color: rgb(255, 255, 255);
-}
+@import url("./partials/bottom-footer-components.scss");
