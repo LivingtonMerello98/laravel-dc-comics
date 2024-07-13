@@ -2,7 +2,7 @@
 
 @section('form')
     <h1>Crea nuovo Comic</h1>
-    <form action="{{ route('comics.store') }}" method="POST">
+    <form action="{{ route('comics.store') }}" method="POST" id="comic-form">
         @csrf
         <label for="title">Titolo:</label>
         <input type="text" name="title" id="title" required><br><br>
@@ -24,19 +24,20 @@
 
         <label for="type">Tipo:</label>
         <select name="type" id="type" required>
-        <option value="comic book">Comic Book</option>
-        <option value="graphic novel">Graphic Novel</option>
+            <option value="comic book">Comic Book</option>
+            <option value="graphic novel">Graphic Novel</option>
         </select><br><br>
 
-        <label for="artists">Artist:</label>
-        <input type="text" name="artist[]" id="artist" required><br><br>
+        <label for="artists">Artisti:</label>
+        <input type="text" name="artists" id="artists" required placeholder="Inserisci artisti separati da virgola"><br><br>
 
-        <label for="writers">Writers:</label>
-        <input type="text" name="writers[]" id="writers" required><br><br>
+        <label for="writers">Scrittori:</label>
+        <input type="text" name="writers" id="writers" required placeholder="Inserisci scrittori separati da virgola"><br><br>
 
-    <button type="submit">Crea</button>
-
+        <button type="submit">Crea</button>
     </form>
 
     <a href="{{ route('comics.index') }}">Torna all'elenco Comics</a>
+
+    <script src=""></script>
 @endsection

@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comic extends Model
 {
-    use HasFactory;
+    protected $casts = [
+        'artists' => 'array',
+        'writers' => 'array',
+    ];
 }

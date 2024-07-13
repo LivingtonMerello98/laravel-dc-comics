@@ -29,7 +29,7 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //validazione dei dati
+        // Validazione dei dati
         $request->validate([
             'title' => 'required',
             'description' => 'required',
@@ -37,11 +37,16 @@ class ComicController extends Controller
             'price' => 'required',
             'series' => 'required',
             'sale_date' => 'required',
-            'artist' => 'required',
-            'writers' => 'required',
+            'artists' => 'required|string',
+            'writers' => 'required|string',
             'type' => 'required'
         ]);
 
+        // Espandi i nomi degli artisti e degli scrittori in array
+        $artists = explode(', ', $request->input('artists'));
+        $writers = explode(', ', $request->input('writers'));
+
+        // Salva i dati nel modello Comic
         $comic = new Comic();
         $comic->title = $request->input('title');
         $comic->description = $request->input('description');
@@ -49,24 +54,35 @@ class ComicController extends Controller
         $comic->price = $request->input('price');
         $comic->series = $request->input('series');
         $comic->sale_date = $request->input('sale_date');
-        $comic->artists = json_encode(['artists']);
-        $comic->writers = json_encode(['writers']);
+        $comic->artists = json_encode($artists);
+        $comic->writers = json_encode($writers);
         $comic->type = $request->input('type');
 
-        $comic->save(); // Salva i dati nel database
+        $comic->save(); // Salva il modello nel database
 
-        //la rotta può essere modificata
         return redirect()->route('comics.index')->with('success', 'Comic inserito con successo.');
     }
+
+
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id) //restituisce il modello pasta utilizzando l id
+    public function show(string $id)
     {
-        $comic = Comic::findOrFail($id); // Trova il comic specifico
+        $comic = Comic::findOrFail($id);
+
+        // Decodifica solo se necessario
+        if (is_string($comic->artists)) {
+            $comic->artists = json_decode($comic->artists, true);
+        }
+        if (is_string($comic->writers)) {
+            $comic->writers = json_decode($comic->writers, true);
+        }
+
         return view('comics.show', compact('comic'));
     }
+
 
     /**
      * Show the form for editing the specified resource.

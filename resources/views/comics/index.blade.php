@@ -4,7 +4,7 @@
 home
 @endsection
 
-
+  
 @section('all_comics')
 
 <h1>Elenco Comics</h1>
