@@ -49,8 +49,8 @@ class ComicController extends Controller
         $comic->price = $request->input('price');
         $comic->series = $request->input('series');
         $comic->sale_date = $request->input('sale_date');
-        $comic->artist = $request->input('artist');
-        $comic->writers = $request->input('writers');
+        $comic->artists = json_encode(['artists']);
+        $comic->writers = json_encode(['writers']);
         $comic->type = $request->input('type');
 
         $comic->save(); // Salva i dati nel database

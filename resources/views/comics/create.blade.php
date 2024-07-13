@@ -29,13 +29,12 @@
         </select><br><br>
 
         <label for="artists">Artist:</label>
-        <input type="text" name="artist" id="artist" required><br><br>
+        <input type="text" name="artist[]" id="artist" required><br><br>
 
         <label for="writers">Writers:</label>
-        <input type="text" name="writers" id="writers" required><br><br>
+        <input type="text" name="writers[]" id="writers" required><br><br>
 
     <button type="submit">Crea</button>
-        <button type="submit">Salva Comic</button>
 
     </form>
 
