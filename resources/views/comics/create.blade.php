@@ -28,7 +28,7 @@
         <option value="graphic novel">Graphic Novel</option>
         </select><br><br>
 
-        <label for="artist">Artist:</label>
+        <label for="artists">Artist:</label>
         <input type="text" name="artist" id="artist" required><br><br>
 
         <label for="writers">Writers:</label>

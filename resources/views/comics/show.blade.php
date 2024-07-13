@@ -8,7 +8,7 @@
 <p><strong>Serie:</strong> {{ $comic->series }}</p>
 <p><strong>Data di uscita:</strong> {{ $comic->sale_date }}</p>
 <p><strong>Genere:</strong> {{ $comic->type }}</p>
-<p><strong>Artista:</strong> {{ $comic->artist }}</p>
+<p><strong>Artista:</strong> {{ $comic->artists }}</p>
 <p><strong>Scrittore:</strong> {{ $comic->writers }}</p>
 
 <a href="{{ route('comics.index') }}">Torna all'elenco Comics</a>
