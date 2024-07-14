@@ -46,9 +46,11 @@ Per installare e configurare il progetto, seguire questi passaggi:
 
 Clonare il repository:
 
-sh
+
 Copia codice
-git clone https://github.com/tuo-utente/laravel-comics.git
+
+git clone https://github.com/LivingtonMerello98/laravel-dc-comics.git
+
 Installare le dipendenze:
 
 
