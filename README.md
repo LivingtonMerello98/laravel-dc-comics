@@ -9,3 +9,6 @@ Iniziate a definire le prime operazioni CRUD con le relative view:
 - store()
 Bonus:
 creare il seeder per la tabella comics utilizzando il file in allegato.
+
+
+![Anteprima del Fumetto](resources/img/laravel-dcComics-index.png)
