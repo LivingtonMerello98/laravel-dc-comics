@@ -1,0 +1,13 @@
+@import '../partials/variables.scss';
+@import '../partials/mixins.scss';
+
+.items {
+    background-color: $bg-blue;
+}
+
+i {
+    font-size: 3rem;
+    color: white;
+    color: #ffffff;
+    transform: rotate(15deg);
+}

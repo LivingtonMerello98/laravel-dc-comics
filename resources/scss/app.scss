@@ -1,6 +1,17 @@
 /*resources/scss/app.scss*/
 @import "~bootstrap/scss/bootstrap";
+@import './partials/variables.scss';
 @import url("./partials/header-components.scss");
 @import url("./partials/hero.scss");
-
+@import url("./partials/footer-components.scss");
 @import url("./partials/bottom-footer-components.scss");
+
+//sections
+@import url("./sections/all-comics.scss");
+@import url("./sections/show.scss");
+@import url("./sections/items.scss");
+
+
+main {
+    background-color: $bg-light-grey;
+}
