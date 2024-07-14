@@ -6,7 +6,7 @@
                     <h3 class="about-title">dc comics</h3>
                     <ul class="about-links">
                         <li class=""><a href="{{ route('comics.index') }}">comics</a></li>
-                    <li><a href="{{ route('comics.create') }}">order</a></li>
+                    <li><a href="{{ route('comics.create') }}">upload comics</a></li>
                     <li >movies</li>
                     <li>tv</li>
                     <li>games</li>

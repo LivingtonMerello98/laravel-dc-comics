@@ -12,7 +12,8 @@
     <form action="{{ route('comics.store') }}" method="POST" id="comic-form">
         @csrf
         <div class="row justify-content-center">
-            <div class="col-md-6 px-5">
+
+            <div class="col-md-6  px-4 py-3 ">
                 <div class="mb-3">
                     <input type="text" class="form-control" name="title" id="title" placeholder="Title" required>
                 </div>
@@ -26,7 +27,8 @@
                     <input type="text" class="form-control" name="price" id="price" placeholder="Price" required>
                 </div>
             </div>
-            <div class="col-md-6 px-5">
+
+            <div class="col-md-6  px-4 py-3">
                 <div class="mb-3">
                     <input type="text" class="form-control" name="series" id="series" placeholder="Series" required>
                 </div>
@@ -47,6 +49,7 @@
                     <input type="text" class="form-control" name="writers" id="writers" placeholder="Enter writers separated by comma" required>
                 </div>
             </div>
+
         </div>
 
         <div class="row justify-content-center mt-4">
