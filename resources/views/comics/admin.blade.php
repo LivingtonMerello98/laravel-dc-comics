@@ -20,7 +20,7 @@ admin panel
                 </thead>
                 <tbody>
                     @foreach ( $comics as $comic )
-                    <tr>
+                    <tr class="">
                         <td>
                             <div class="d-flex py-2">
                                 <div class="col-1">

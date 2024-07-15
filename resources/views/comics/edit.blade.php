@@ -14,8 +14,9 @@
             </div>
         </div>
     
-        <form action="{{ route('comics.store') }}" method="POST" id="comic-form">
+        <form action="{{ route('comics.update', $comic -> id) }}" method="POST" id="comic-form">
             @csrf
+            @method('PUT')
             <div class="row justify-content-center">
     
                 <div class="col-md-6  px-4 py-3 ">

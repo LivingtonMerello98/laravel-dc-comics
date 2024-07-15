@@ -90,8 +90,6 @@ class ComicController extends Controller
     public function edit(string $id)
     {
         $comic = Comic::findOrFail($id);
-        // $comic->artists = json_decode($comic->artists);
-        // $comic->writers = json_decode($comic->writers);
         return view('comics.edit', compact('comic'));
     }
 
@@ -117,8 +115,8 @@ class ComicController extends Controller
         $artists = explode(', ', $request->input('artists'));
         $writers = explode(', ', $request->input('writers'));
 
-        // Salva i dati nel modello Comic
-        $comic = new Comic();
+        // Trova il comic e aggiorna i suoi dati
+        $comic = Comic::findOrFail($id);
         $comic->title = $request->input('title');
         $comic->description = $request->input('description');
         $comic->thumb = $request->input('thumb');
@@ -129,16 +127,20 @@ class ComicController extends Controller
         $comic->writers = json_encode($writers);
         $comic->type = $request->input('type');
 
-        $comic->save(); // Salva il modello nel database
+        $comic->save(); // Salva le modifiche nel database
 
-        return redirect()->route('comics.edit')->with('success', 'Comic modificato con successo.');
+        return redirect()->route('comics.index')->with('success', 'Comic aggiornato con successo.');
     }
+
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
     {
-        //
+        $comic = Comic::find($id);
+        $comic->delete();
+
+        return redirect()->route('comics.index')->with('success', 'Comic deleted successfully.');
     }
 }
