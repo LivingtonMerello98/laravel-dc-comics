@@ -39,5 +39,5 @@ use Illuminate\Support\Facades\Route;
 //registra automaticamente un insieme di rotte standard per gestire un CRUD (Create, Read, Update, Delete) per una risorsa. 
 Route::resource('comics', ComicController::class);
 
-//rotta per adminIndex
+//rotta per index
 Route::get('admin', [PageController::class, 'index'])->name('comics.admin');
