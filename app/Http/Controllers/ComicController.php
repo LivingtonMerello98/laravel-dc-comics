@@ -90,6 +90,8 @@ class ComicController extends Controller
     public function edit(string $id)
     {
         $comic = Comic::findOrFail($id);
+        // $comic->artists = json_decode($comic->artists);
+        // $comic->writers = json_decode($comic->writers);
         return view('comics.edit', compact('comic'));
     }
 
@@ -98,6 +100,38 @@ class ComicController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        // Validazione dei dati
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'thumb' => 'required',
+            'price' => 'required',
+            'series' => 'required',
+            'sale_date' => 'required',
+            'artists' => 'required|string',
+            'writers' => 'required|string',
+            'type' => 'required'
+        ]);
+
+        // Espando i nomi degli artisti e degli scrittori in array
+        $artists = explode(', ', $request->input('artists'));
+        $writers = explode(', ', $request->input('writers'));
+
+        // Salva i dati nel modello Comic
+        $comic = new Comic();
+        $comic->title = $request->input('title');
+        $comic->description = $request->input('description');
+        $comic->thumb = $request->input('thumb');
+        $comic->price = $request->input('price');
+        $comic->series = $request->input('series');
+        $comic->sale_date = $request->input('sale_date');
+        $comic->artists = json_encode($artists);
+        $comic->writers = json_encode($writers);
+        $comic->type = $request->input('type');
+
+        $comic->save(); // Salva il modello nel database
+
+        return redirect()->route('comics.edit')->with('success', 'Comic modificato con successo.');
     }
 
     /**

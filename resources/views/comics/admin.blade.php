@@ -29,7 +29,7 @@ admin panel
                                 <div class="col-1 flex-grow-1">
                                     <div class="ms-3">
                                         <span class="fw-semibold d-block text-white">{{ $comic->series }}</span>
-                                        <span class="text-secondary d-none d-xl-block">{{ $comic->title }}</span>
+                                        <span class="text-secondary d-none d-xl-block text-white">{{ $comic->title }}</span>
                                     </div>
                                 </div>
                             </div>

@@ -21,6 +21,8 @@
 
         @yield('admin')
 
+        @yield('update')
+
     </main>
     @include('shared.items')
     @include('shared.footer')
