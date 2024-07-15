@@ -140,8 +140,13 @@ class ComicController extends Controller
     public function destroy(string $id)
     {
         $comic = Comic::find($id);
+        if (!$comic) {
+            //se il comic non esiste torna nell admin.blade
+            return redirect()->route('comics.admin');
+        }
+
         $comic->delete();
 
-        return redirect()->route('comics.index')->with('success', 'Comic deleted successfully.');
+        return redirect()->route('comics.admin');
     }
 }
