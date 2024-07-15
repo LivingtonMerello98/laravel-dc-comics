@@ -111,7 +111,7 @@ class ComicController extends Controller
 
 
     //metodo per la pagina admin
-    public function indexAdmin()
+    public function adminIndex()
     {
         $comics = Comic::all();
         return view('comics.admin', compact('comics'));

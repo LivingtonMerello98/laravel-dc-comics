@@ -38,3 +38,6 @@ use App\Http\Controllers\ComicController;
 
 //registra automaticamente un insieme di rotte standard per gestire un CRUD (Create, Read, Update, Delete) per una risorsa. 
 Route::resource('comics', ComicController::class);
+
+//rotta per adminIndex
+Route::get('comics/admin', [ComicController::class, 'adminIndex'])->name('comics.admin');
