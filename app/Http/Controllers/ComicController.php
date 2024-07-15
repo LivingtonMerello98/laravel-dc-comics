@@ -106,8 +106,8 @@ class ComicController extends Controller
             'price' => 'required',
             'series' => 'required',
             'sale_date' => 'required',
-            'artists' => 'required|string',
-            'writers' => 'required|string',
+            'artists' => 'required',
+            'writers' => 'required',
             'type' => 'required'
         ]);
 
