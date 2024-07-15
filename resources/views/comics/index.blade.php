@@ -16,6 +16,11 @@ home
 
 <div class="container bg-light-grey py-5">
     <div class="row">
+
+        {{-- <div class="col-md-12 py-3">
+            <h2 class="text-white text-uppercase">new release!</h2>
+        </div> --}}
+
         <ul class="d-flex justify-content-center flex-wrap list-unstyled">
             @foreach ($comics as $comic)
                 <li class="col-md-2 mb-4">

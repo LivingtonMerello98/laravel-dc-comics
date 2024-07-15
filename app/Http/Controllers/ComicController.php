@@ -42,7 +42,7 @@ class ComicController extends Controller
             'type' => 'required'
         ]);
 
-        // Espandi i nomi degli artisti e degli scrittori in array
+        // Espando i nomi degli artisti e degli scrittori in array
         $artists = explode(', ', $request->input('artists'));
         $writers = explode(', ', $request->input('writers'));
 
@@ -89,7 +89,8 @@ class ComicController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $comic = Comic::findOrFail($id);
+        return view('comics.edit', compact('comic'));
     }
 
     /**
@@ -106,5 +107,13 @@ class ComicController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+
+    //metodo per la pagina admin
+    public function indexAdmin()
+    {
+        $comics = Comic::all();
+        return view('comics.admin', compact('comics'));
     }
 }

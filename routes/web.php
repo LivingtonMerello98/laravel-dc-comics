@@ -20,13 +20,21 @@ use App\Http\Controllers\ComicController;
 // });
 
 //mostrare l'elenco di tutti i comics presenti nel database
-Route::get('/', [ComicController::class, 'index'])->name('comics.index');
+// Route::get('/', [ComicController::class, 'index'])->name('comics.index');
 
 //mostrare il form per creare un nuovo comic
-Route::get('/comics/create',  [ComicController::class, 'create'])->name('comics.create');
+// Route::get('/comics/create',  [ComicController::class, 'create'])->name('comics.create');
 
 //salvare un nuovo comic nel database
-Route::post('/comics', [ComicController::class, 'store'])->name('comics.store');
+// Route::post('/comics', [ComicController::class, 'store'])->name('comics.store');
 
 //mostrare il singolo comic
-Route::get('/comics/{id}', [ComicController::class, 'show'])->name('comics.show');
+// Route::get('/comics/{id}', [ComicController::class, 'show'])->name('comics.show');
+
+
+
+
+
+
+//registra automaticamente un insieme di rotte standard per gestire un CRUD (Create, Read, Update, Delete) per una risorsa. 
+Route::resource('comics', ComicController::class);
