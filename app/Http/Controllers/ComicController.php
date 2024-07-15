@@ -129,7 +129,8 @@ class ComicController extends Controller
 
         $comic->save(); // Salva le modifiche nel database
 
-        return redirect()->route('comics.index')->with('success', 'Comic aggiornato con successo.');
+        //show ha bisogno di un id
+        return redirect()->route('comics.show', ['comic' => $comic->id]);
     }
 
 

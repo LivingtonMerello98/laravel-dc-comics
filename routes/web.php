@@ -31,11 +31,6 @@ use Illuminate\Support\Facades\Route;
 //mostrare il singolo comic
 // Route::get('/comics/{id}', [ComicController::class, 'show'])->name('comics.show');
 
-
-
-
-
-
 //registra automaticamente un insieme di rotte standard per gestire un CRUD (Create, Read, Update, Delete) per una risorsa. 
 Route::resource('comics', ComicController::class);
 
