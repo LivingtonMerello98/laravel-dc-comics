@@ -19,6 +19,8 @@
 
         @yield('details')
 
+        @yield('admin')
+
     </main>
     @include('shared.items')
     @include('shared.footer')

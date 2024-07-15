@@ -9,7 +9,7 @@
             <div class="col-8 py-3 d-flex align-items-center justify-content-end">
                 <li><a href="{{ route('comics.index') }}">comics</a></li>
                 <li><a href="{{ route('comics.create') }}">upload comics</a></li>
-                <li>movies</li>
+                <li><a href="{{ route('comics.admin') }}">admin</a></li>
                 <li>tv</li>
                 <li>games</li>
                 <li>collectibles</li>

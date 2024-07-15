@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Guest\PageController;
 use App\Http\Controllers\ComicController;
-
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,4 +40,4 @@ use App\Http\Controllers\ComicController;
 Route::resource('comics', ComicController::class);
 
 //rotta per adminIndex
-Route::get('comics/admin', [ComicController::class, 'adminIndex'])->name('comics.admin');
+Route::get('admin', [PageController::class, 'index'])->name('comics.admin');
