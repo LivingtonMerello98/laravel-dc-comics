@@ -28,5 +28,6 @@
     @include('shared.footer')
     @include('shared.bottom-footer')
     <script src="https://kit.fontawesome.com/7711c3f1fc.js" crossorigin="anonymous"></script>
+
 </body>
 </html>

@@ -31,14 +31,16 @@ class ComicController extends Controller
     {
         // Validazione dei dati
         $request->validate([
-            'title' => 'required',
+
+            //vengono presi dall attributo name del form
+            'title' => 'required|unique:comics|max:100',
             'description' => 'required',
             'thumb' => 'required',
-            'price' => 'required',
-            'series' => 'required',
+            'price' => 'required|string|max:10',
+            'series' => 'required|string|max:255',
             'sale_date' => 'required',
-            'artists' => 'required|string',
-            'writers' => 'required|string',
+            'artists' => 'required|string|max:255',
+            'writers' => 'required|string|max:255',
             'type' => 'required'
         ]);
 
@@ -149,4 +151,11 @@ class ComicController extends Controller
 
         return redirect()->route('comics.admin');
     }
+
+    //metodo per la pagina admin new
+    // public function adminIndex()
+    // {
+    //     // $comics = Comic::all();
+    //     return view('non hai capito laravel');
+    // }
 }

@@ -31,6 +31,7 @@ home
                             </div>
                             <div class="card-body text-center">
                                 <p class="card-title fs-6 text-uppercase text-white">{{ $comic->series }}</p>
+                                {{-- <span class="card-title fs-6 text-uppercase text-white">{{ $comic->price }}</span> --}}
                             </div>
                         </div>
                     </a>

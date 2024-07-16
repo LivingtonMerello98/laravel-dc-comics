@@ -17,13 +17,13 @@
                 </div>
                 <p class="text-white line-height"><strong>Descrizione:</strong> {{ $comic->description }}</p>
                 <p class="text-white"><strong>Price:</strong> {{ $comic->price }}</p>
-                <p class="text-white"><strong>Serie:</strong> {{ $comic->series }}</p>
-                <p class="text-white"><strong>Data di uscita:</strong> {{ $comic->sale_date }}</p>
-                <p class="text-white"><strong>Genere:</strong> {{ $comic->type }}</p>
+                <p class="text-white"><strong>Series:</strong> {{ $comic->series }}</p>
+                <p class="text-white"><strong>Sale date:</strong> {{ $comic->sale_date }}</p>
+                <p class="text-white"><strong>Type:</strong> {{ $comic->type }}</p>
 
                 <div class="d-flex">
                     <div class="col">
-                        <p class="text-white"><strong>Artisti:</strong></p>
+                        <p class="text-white"><strong>Artist:</strong></p>
                 <ul>
                     @foreach($comic->artists as $artist)
                         <li class="text-white">{{ $artist }}</li>
@@ -31,7 +31,7 @@
                 </ul>
                     </div>
                     <div class="col">
-                        <p class="text-white"><strong>Scrittori:</strong></p>
+                        <p class="text-white"><strong>Writers:</strong></p>
                 <ul>
                     @foreach($comic->writers as $writer)
                         <li class="text-white">{{ $writer }}</li>

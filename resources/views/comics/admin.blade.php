@@ -25,8 +25,9 @@
                                     </div>
                                     <div class="col-1 flex-grow-1">
                                         <div class="ms-3">
-                                            <span class="fw-semibold d-block text-white">{{ $comic->series }}</span>
-                                            <span class="text-secondary d-none d-xl-block text-white">{{ $comic->title }}</span>
+                                            <p class="fw-semibold d-block text-white fw-bold">{{ $comic->series }}</p>
+                                            <p class="text-secondary d-none d-xl-block text-white fw-lighter">{{ $comic->title }}</p>
+                                            <p class="text-secondary d-none d-xl-block text-white fw-lighter">{{ $comic->sale_date }}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -38,19 +39,43 @@
                             </td>
                             <td>
                                 <div class="button-container d-flex justify-content-center">
-                                    <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-outline-primary btn-sm m-1">
+                                    <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-outline-info btn-sm m-1">
                                         <i class="fa-solid fa-pencil"></i>
                                     </a>
-                                    <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+
+                                    <form id="deleteForm{{ $comic->id }}" action="{{ route('comics.destroy', $comic->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-outline-danger btn-sm m-1" data-toggle="modal" data-target="#confirmationModal">
+                                        <button type="button" class="btn btn-outline-danger btn-sm m-1" data-toggle="modal" data-target="#confirmationModal{{ $comic->id }}">
                                             <i class="fa-solid fa-trash"></i>
                                         </button>
                                     </form>
+                                    
                                 </div>
                             </td>
                         </tr>
+
+                        {{-- aggiungere la modale --}}
+                        {{-- <!-- Modal di conferma per l'eliminazione del comic -->
+                        <div class="modal fade" id="confirmationModal{{ $comic->id }}" tabindex="-1" role="dialog" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="confirmationModalLabel">Conferma Eliminazione</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Sei sicuro di voler eliminare il comic "{{ $comic->title }}"?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
+                                        <button type="button" class="btn btn-danger" onclick="event.preventDefault(); document.getElementById('deleteForm{{ $comic->id }}').submit();">Elimina</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> --}}
                     @endforeach
                 </tbody>
             </table>
