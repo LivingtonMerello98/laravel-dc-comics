@@ -9,6 +9,7 @@
         </div>
     </div>
 
+    {{-- lista di errori
     @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -17,7 +18,7 @@
             @endforeach
         </ul>
     </div>
-    @endif
+    @endif --}}
 
     <form action="{{ route('comics.store') }}" method="POST" id="comic-form">
         @csrf
@@ -31,35 +32,59 @@
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <textarea class="form-control" name="description" id="description" rows="5" placeholder="Description" ></textarea>
+                    <textarea class="form-control @error('description') is-invalid @enderror" name="description" id="description" rows="5" placeholder="Description" ></textarea>
+                    @error('description')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="mb-3">
-                    <input type="text" class="form-control" name="thumb" id="thumb" placeholder="Image" >
+                    <input type="text" class="form-control @error('thumb') is-invalid @enderror" name="thumb" id="thumb" placeholder="Image" >
+                    @error('thumb')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="mb-3">
-                    <input type="" class="form-control" name="price" id="price" placeholder="Price" >
+                    <input type="" class="form-control @error('price') is-invalid @enderror" name="price" id="price" placeholder="Price" >
+                    @error('price')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
                 </div>
             </div>
 
             <div class="col-md-6  px-4 py-3">
                 <div class="mb-3">
-                    <input type="text" class="form-control" name="series" id="series" placeholder="Series" >
+                    <input type="text" class="form-control @error('series') is-invalid @enderror" name="series" id="series" placeholder="Series" >
+                    @error('series')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="mb-3">
-                    <input type="date" class="form-control" name="sale_date" id="sale_date" >
+                    <input type="date" class="form-control @error('sale_date') is-invalid @enderror" name="sale_date" id="sale_date" >
+                    @error('sale_date')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="mb-3">
-                    <select class="form-select" name="type" id="type" >
+                    <select class="form-select @error('type') is-invalid @enderror" name="type" id="type" >
                         <option value="" disabled selected>Type</option>
                         <option value="comic book">Comic Book</option>
                         <option value="graphic novel">Graphic Novel</option>
                     </select>
+                    @error('type')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="mb-3">
-                    <input type="text" class="form-control" name="artists" id="artists" placeholder="Enter artists separated by comma" >
+                    <input type="text" class="form-control @error('artists') is-invalid @enderror" name="artists" id="artists" placeholder="Enter artists separated by comma">
+                    @error('artists')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="mb-3">
-                    <input type="text" class="form-control" name="writers" id="writers" placeholder="Enter writers separated by comma" >
+                    <input type="text" class="form-control @error('writers') is-invalid @enderror" name="writers" id="writers" placeholder="Enter writers separated by comma">
+                    @error('writers')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
                 </div>
             </div>
 

@@ -45,10 +45,11 @@ class ComicController extends Controller
         ]);
 
         // Espando i nomi degli artisti e degli scrittori in array
-        $artists = explode(', ', $request->input('artists'));
-        $writers = explode(', ', $request->input('writers'));
+        // $artists = explode(', ', $request->input('artists'));
+        // $writers = explode(', ', $request->input('writers'));
 
         // Salva i dati nel modello Comic
+        $data = $request->all();
         $comic = new Comic();
         $comic->title = $request->input('title');
         $comic->description = $request->input('description');
@@ -56,8 +57,8 @@ class ComicController extends Controller
         $comic->price = $request->input('price');
         $comic->series = $request->input('series');
         $comic->sale_date = $request->input('sale_date');
-        $comic->artists = json_encode($artists);
-        $comic->writers = json_encode($writers);
+        $comic->artists = json_encode(explode(',', $data['artists']));
+        $comic->writers = json_encode(explode(',', $data['writers']));
         $comic->type = $request->input('type');
 
         $comic->save(); // Salva il modello nel database

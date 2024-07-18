@@ -37,6 +37,7 @@ Visualizzazione Tutti i Fumetti:
 ![Anteprima del Fumetto](resources/img/laravel-dcComics-index.png)
 ![Anteprima del Fumetto](resources/img/laravel-dcComics-show.png)
 ![Anteprima del Fumetto](resources/img/laravel-dcComics-create.png)
+![Anteprima del Fumetto](resources/img/laravel-dcComics-admin.png)
 
 
 ## installazione
