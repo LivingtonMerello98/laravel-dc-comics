@@ -34,6 +34,12 @@ use Illuminate\Support\Facades\Route;
 //route del nuovo metodo in comic controller
 //Route::get('comics/admin', [ComicController::class, 'adminIndex'])->name('comics.admin');
 
+
+
+Route::get('/', function () {
+    return redirect('/comics');
+});
+
 //registra automaticamente un insieme di rotte standard per gestire un CRUD (Create, Read, Update, Delete) per una risorsa. 
 Route::resource('comics', ComicController::class);
 
